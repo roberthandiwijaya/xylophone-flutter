@@ -10,6 +10,16 @@ class XylophoneApp extends StatelessWidget {
     player.play('note$SoundNumber.wav');
   }
 
+  void buildKey(){
+    Expanded(
+      child: FlatButton(
+          onPressed: () {
+            PlaySound(1);
+          },
+          color: Colors.red),
+    ),
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,56 +28,14 @@ class XylophoneApp extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Container(
-                padding: EdgeInsets.symmetric(vertical:100),
-                child: FlatButton(
-                    onPressed: () {
-                      PlaySound(1);
-                    },
-                    color: Colors.red),
-              ),
-              Container(
-                child: FlatButton(
-                    onPressed: () {
-                      PlaySound(2);
-                    },
-                    color: Colors.orange),
-              ),
-              Container(
-                child: FlatButton(
-                    onPressed: () {
-                      PlaySound(3);
-                    },
-                    color: Colors.yellow),
-              ),
-              Container(
-                child: FlatButton(
-                    onPressed: () {
-                      PlaySound(4);
-                    },
-                    color: Colors.green),
-              ),
-              Container(
-                child: FlatButton(
-                    onPressed: () {
-                      PlaySound(5);
-                    },
-                    color: Colors.teal),
-              ),
-              Container(
-                child: FlatButton(
-                    onPressed: () {
-                      PlaySound(6);
-                    },
-                    color: Colors.blueAccent),
-              ),
-              Container(
-                child: FlatButton(
-                    onPressed: () {
-                      PlaySound(7);
-                    },
-                    color: Colors.purple),
-              ),
+
+              buildKey(),
+              buildKey(),
+              buildKey(),
+              buildKey(),
+              buildKey(),
+              buildKey(),
+              buildKey(),
             ],
           ),
         ),
